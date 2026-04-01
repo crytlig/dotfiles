@@ -68,6 +68,7 @@
             k9s
             kubectx
             gum
+            opencode
           ];
         };
       });
