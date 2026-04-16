@@ -109,3 +109,12 @@ tmdef() {
 
     tmux attach -t $session:1
 }
+
+qme() {
+    if [ -z $1 ]; then
+        echo 'need arg for question'
+        return
+    fi
+
+    pi -p "$1"
+}
