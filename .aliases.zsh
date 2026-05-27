@@ -13,27 +13,6 @@ alias tfc='terraform console'
 
 alias nopencode='nix run nixpkgs#opencode'
 
-getbin() {
-    local uri=$1
-    local name=$2
-    local target="$HOME/tools"
-
-    if [ ! -d "$target" ]; then
-        mkdir "$target"
-    fi
-
-    cmd="curl -L"
-    if [ -n "$name" ]; then
-        cmd+=" -o $name "
-    else
-        cmd+="O"
-    fi
-
-    echo "$cmd $uri"
-    eval $cmd $uri
-}
-
-
 myip() {
   local ip=$(curl -s icanhazip.com)
 
@@ -110,11 +89,19 @@ tmdef() {
     tmux attach -t $session:1
 }
 
+tns() {
+    local name="${1:?session name}"
+    local dir="${2:-.}"
+    # Replace any ~ with HOME dir. Tmux does not expand properly
+    dir="${dir/#\~/$HOME}"
+    tmux new-session -d -s "$name" -c "$dir"
+}
+
 qme() {
     if [ -z $1 ]; then
         echo 'need arg for question'
         return
     fi
 
-    pi -p "$1"
+    pi --model "github-copilot/gpt-5.4-mini" -p "$1"
 }
