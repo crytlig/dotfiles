@@ -42,8 +42,6 @@
             fzf
             direnv
             docker_29
-            postgresql_18
-            pgadmin4-desktopmode
             ffmpeg
             lazygit
             lazydocker
