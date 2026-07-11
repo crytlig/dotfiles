@@ -119,7 +119,7 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 # pnpm
 export PNPM_HOME="/Users/cliff/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
