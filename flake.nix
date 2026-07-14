@@ -56,15 +56,13 @@
             cargo-watch
             sqlite
             pack
+            jujutsu
             just
             python313
             ruff
             uv
             mypy
-            k9s
-            kubectx
             gum
-            opencode
           ];
         };
       });
