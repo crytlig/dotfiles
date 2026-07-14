@@ -63,6 +63,7 @@
             uv
             mypy
             gum
+            helix
           ];
         };
       });
