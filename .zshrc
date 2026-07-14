@@ -104,6 +104,7 @@ export PATH="$PATH:$HOME/go/bin"
 # export PATH=$PATH:"/mnt/c/Users/ClaesRytlig/AppData/Local/Programs/Microsoft VS Code/bin"
 # export PATH=$PATH:"/mnt/c/Windows/System32"
 #
+export PATH="$PATH:$HOME/.bun/bin"
 export BUILDX_EXPERIMENTAL=1
 
 export NVM_DIR="$HOME/.nvm"
