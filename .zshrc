@@ -70,27 +70,7 @@ if [ $(uname) = "Darwin" ]; then
 	ZSH_HIGHLIGHT_STYLES[comment]=fg=green,bold
 	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#a8a8a6'
 fi
-
-
-pm() {
-  if [[ $# -gt 0 ]]; then
-    cd "$(pathmarks guess "$1")"
-    return
-  fi
-
-  local p
-  p="$(pathmarks pick)"
-  if [[ -n "$p" ]]; then cd "$p"; fi
-}
-
-alias pms="pathmarks save"
-
-# Completion: suggest names from `pathmarks list`
-_pm() {
-  compadd -- $(pathmarks list)
-}
-compdef _pm pm
-
+#
 # Other exports
 export EDITOR=nvim
 
@@ -103,13 +83,17 @@ export PATH="$PATH:$HOME/go/bin"
 ## WSL
 # export PATH=$PATH:"/mnt/c/Users/ClaesRytlig/AppData/Local/Programs/Microsoft VS Code/bin"
 # export PATH=$PATH:"/mnt/c/Windows/System32"
-#
+# justfile
+fpath=(~/.zsh/completions $fpath)
 export PATH="$PATH:$HOME/.bun/bin"
 export BUILDX_EXPERIMENTAL=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload -U compinit
+compinit
 
 autoload -U +X bashcompinit && bashcompinit
 
