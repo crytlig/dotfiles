@@ -108,3 +108,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+eval "$(/var/home/cliff/.local/bin/mise activate zsh)" # added by https://mise.run/zsh

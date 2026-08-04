@@ -1,3 +1,7 @@
+# window-decoration = none
+# gtk-titlebar = false
+
+command = /usr/bin/zsh -l -i
 # Unbind default open in fullscreen
 keybind = super+enter=unbind
 

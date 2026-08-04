@@ -1,0 +1,10 @@
+[tools]
+terraform = "latest"
+"vfox:neovim" = "latest"
+gh = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+just = "latest"
+ripgrep = "latest"
+uv = "latest"
+
