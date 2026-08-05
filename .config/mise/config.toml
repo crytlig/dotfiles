@@ -7,4 +7,9 @@ lazydocker = "latest"
 just = "latest"
 ripgrep = "latest"
 uv = "latest"
-
+# langs
+node = 'latest'
+python = 'latest'
+go = 'latest'
+# term
+tmux = 'latest'

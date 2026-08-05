@@ -14,7 +14,6 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	zsh-interactive-cd
-	zsh-fzf-history-search
 	vscode
 )
 
