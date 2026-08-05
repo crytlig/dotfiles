@@ -7,6 +7,7 @@ lazydocker = "latest"
 just = "latest"
 ripgrep = "latest"
 uv = "latest"
+azure-cli = 'latest'
 # langs
 node = 'latest'
 python = 'latest'
