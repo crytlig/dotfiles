@@ -14,3 +14,4 @@ python = 'latest'
 go = 'latest'
 # term
 tmux = 'latest'
+"github:herdrdev/herdr" = 'latest'
