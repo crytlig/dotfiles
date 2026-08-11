@@ -18,8 +18,10 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# source ~/.openai
 source ~/.aliases.zsh
+
+
+export PAGER=cat
 
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -31,12 +33,7 @@ autoload -Uz compinit
 compinit
 unsetopt BEEP
 
-export PAGER=cat
 
-# End of lines added by compinstall
-#
-VSCODE=code-insiders
-# For a full list of active aliases, run `alias`.
 alias lg=lazygit
 alias nv=nvim
 alias k=kubectl
@@ -51,19 +48,13 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m'
 fi
 
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zsh_history
 
-#complete -F __start_terraform tf
-#complete -F __start_kubectl k
-
 # Change comment style from dark blue to green
 #ZSH_HIGHLIGHT_STYLES[comment]=fg=green,bold
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#555555'
-
 
 if [ $(uname) = "Darwin" ]; then
 	ZSH_HIGHLIGHT_STYLES[comment]=fg=green,bold
@@ -72,7 +63,6 @@ fi
 #
 # Other exports
 export EDITOR=nvim
-
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/tools"
 export PATH="$PATH:$HOME/bin"
