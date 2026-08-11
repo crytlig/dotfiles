@@ -35,10 +35,3 @@ flake.nix
 flake.lock
 result/
 
-# Ignore gitconfig. It's werid stowing something that's encrypted
-gitconfig
-
-# Ignore crush
-crush.json
-.crush/
-CRUSH.md
