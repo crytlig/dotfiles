@@ -13,3 +13,6 @@ result
 
 .oh-my-zsh/
 !.oh-my-zsh/custom/
+
+.config/herdr/**
+!.config/herdr/config.toml
