@@ -69,6 +69,12 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
+
+# bluefin
+# PWAsForFirefox: custom install location (installed under ~/tools)
+export FFPWA_EXECUTABLES="$HOME/tools"
+export FFPWA_SYSDATA="$HOME/tools/firefoxpwa-data"
+
 ## WSL
 # export PATH=$PATH:"/mnt/c/Users/ClaesRytlig/AppData/Local/Programs/Microsoft VS Code/bin"
 # export PATH=$PATH:"/mnt/c/Windows/System32"
