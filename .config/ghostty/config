@@ -20,7 +20,6 @@ keybind = super+enter=unbind
 # keybind = opt+up=goto_split:top
 # keybind = opt+down=goto_split:bottom
 
-# Currently unbinded to make Zellij work
 macos-option-as-alt = true
 keybind = alt+left=unbind
 keybind = alt+right=unbind
@@ -30,4 +29,8 @@ keybind = super+ctrl+right=resize_split:right,20
 keybind = super+ctrl+left=resize_split:left,20
 keybind = super+ctrl+up=resize_split:up,20
 keybind = super+ctrl+down=resize_split:down,20
+keybind = shift+enter=text:\n
+
+# OMP
+keybind = alt+backspace=text:\x1b\x7f
 keybind = shift+enter=text:\n
