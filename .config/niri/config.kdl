@@ -293,7 +293,9 @@ layout {
 spawn-at-startup "waybar"
 
 // swayidle for idling the computer instead of being on all the time
-spawn-at-startup "swayidle" "-w" "timeout" "600" " suspend"
+// something's wrong..
+// spawn-at-startup "swayidle" "-w" "timeout" "10" "systemctl" "suspend" "resume" "niri" "msg" "action" "power-on-monitors"
+
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
