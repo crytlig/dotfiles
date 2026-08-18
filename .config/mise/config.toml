@@ -12,6 +12,7 @@ azure-cli = 'latest'
 node = 'latest'
 python = 'latest'
 go = 'latest'
+powershell-core = "latest"
 # term
-tmux = 'latest'
 "github:herdrdev/herdr" = 'latest'
+"github:can1357/oh-my-pi" = 'latest'
