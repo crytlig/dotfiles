@@ -73,5 +73,5 @@ qme() {
         return
     fi
 
-    pi --model "github-copilot/gpt-5.4-mini" -p "$1"
+    pi --model "openrouter/free" -p "$1"
 }
