@@ -16,6 +16,7 @@ environment {
 }
 
 workspace "herdr"
+workspace "slack"
 workspace "cvation"
 workspace "skaylink"
 workspace "pundl"
@@ -297,6 +298,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "~/.config/niri/scripts/workspaces-up.sh"
 
 // swayidle for idling the computer instead of being on all the time
 // something's wrong..
