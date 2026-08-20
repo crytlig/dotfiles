@@ -401,7 +401,8 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Super+Alt+C hotkey-overlay-title="Spawn comms" { spawn-sh "$HOME/.local/bin/comms-up"; }
+    Super+Shift+Q hotkey-overlay-title="Power Menu" { spawn-sh "$HOME/.config/niri/scripts/power-menu.sh"; }
+
  // Example: Press Mod+Shift+W to clear or set a name
     // Mod+Shift+W { spawn "niri" "msg" "action" "set-workspace-name" "Work"; }
     //
