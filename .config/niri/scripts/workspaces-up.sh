@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-#
-# Firefox window titles use the format:
-#   [page title] — [profile name] — Mozilla Firefox
-# The em-dash (U+2014) is the separator between segments.
-EM=$'\u2014'
 
 WORKSPACES=(
     "1|herdr|herdr"
     "2|slack|flatpak|com.slack.Slack"
-    "3|cvation|firefox|cvation.Profile|cvation|https://outlook.cloud.microsoft/mail/|https://teams.microsoft.com"
-    "4|skaylink|firefox|skaylink.Profile|Skaylink|https://outlook.cloud.microsoft/mail/|https://teams.cloud.microsoft"
-    "5|pundl|firefox|pfeiferundlangen.Profile|P&L ${EM} Mozilla Firefox|https://outlook.office.com/mail/|https://teams.microsoft.com"
+    "3|cvation|chrome|Profile 2|https://outlook.cloud.microsoft/mail/|https://teams.microsoft.com"
+    "4|skaylink|chrome|Profile 1|https://outlook.cloud.microsoft/mail/|https://teams.cloud.microsoft"
+    "5|pundl|chrome|Profile 3|https://outlook.office.com/mail/|https://teams.microsoft.com"
 )
-
-PROFILE_DIR="$HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox"
 
 NIRI="${NIRI:-$(command -v niri || echo /usr/bin/niri)}"
 JQ="${JQ:-$(command -v jq || echo /usr/bin/jq)}"
@@ -29,7 +22,7 @@ if command -v herdr >/dev/null 2>&1; then
 else
     HERDR="$HOME/.local/share/mise/installs/github-herdrdev-herdr/latest/herdr"
 fi
-#
+
 # Returns 0 if a workspace with the given name exists, 1 otherwise.
 workspace_exists() {
     local name="$1"
@@ -56,35 +49,23 @@ ensure_workspace() {
 #  APP LAUNCHING
 # ────────────────────────────────────────────────────────────────
 
-# Returns 0 if a window with the given app_id (and optional title regex)
-# exists on the workspace, 1 otherwise.
+# Returns 0 if a window with the given app_id exists on the workspace, 1 otherwise.
 window_exists() {
     local workspace_id="$1"
     local app_id="$2"
-    local title_regex="${3:-}"
-
-    local filter
-    if [ -n "$title_regex" ]; then
-        filter=".[] | select(.workspace_id==$workspace_id and .app_id==\"$app_id\" and (.title | test(\"$title_regex\")))"
-    else
-        filter=".[] | select(.workspace_id==$workspace_id and .app_id==\"$app_id\")"
-    fi
-
+    local filter=".[] | select(.workspace_id==$workspace_id and .app_id==\"$app_id\")"
     local win_id
     win_id=$("$NIRI" msg -j windows | "$JQ" -r "$filter | .id" | head -1)
     [ -n "$win_id" ]
 }
 
 # Wait (poll) until the expected window appears on the workspace.
-# niri places a spawned window on the workspace that is focused when the
-# window MAPS, not when spawn was requested — so we must not change focus
-# until the window is confirmed on the target workspace.
 # Returns 0 on success, 1 on timeout.
 wait_for_window() {
-    local workspace_id="$1" app_id="$2" title_regex="${3:-}" timeout="${4:-30}"
+    local workspace_id="$1" app_id="$2" timeout="${3:-30}"
     local waited=0
     while [ "$waited" -lt "$timeout" ]; do
-        if window_exists "$workspace_id" "$app_id" "$title_regex"; then
+        if window_exists "$workspace_id" "$app_id"; then
             return 0
         fi
         sleep 1
@@ -129,23 +110,19 @@ ensure_app() {
             fi
             DID_SPAWN=1
             ;;
-        firefox)
-            local profile_symlink="${1:-}" title_regex="${2:-}" outlook_url="${3:-}" teams_url="${4:-}"
-            if window_exists "$workspace_id" org.mozilla.firefox "$title_regex"; then
-                echo "  → Firefox ($profile_symlink) already present — skipping"
+        chrome)
+            local profile_dir="${1:-}" outlook_url="${2:-}" teams_url="${3:-}"
+            if window_exists "$workspace_id" com.google.Chrome; then
+                echo "  → Chrome ($profile_dir) already present — skipping"
                 return
             fi
-            echo "  → opening $profile_symlink Outlook + Teams…"
-            # Single spawn: --new-window + --new-tab atomically, avoiding the
-            # race of separate --new-tab calls.
+            echo "  → opening Chrome $profile_dir Outlook + Teams…"
             "$NIRI" msg action spawn -- \
-                "$FF" run org.mozilla.firefox \
-                "--profile" "$PROFILE_DIR/$profile_symlink" \
+                "$FF" run com.google.Chrome \
+                "--profile-directory=$profile_dir" \
                 "--new-window" "$outlook_url" \
                 "--new-tab" "$teams_url"
-            if ! wait_for_window "$workspace_id" org.mozilla.firefox "$title_regex"; then
-                echo "  ! $profile_symlink did not appear on this workspace — it may have merged into an existing instance"
-            fi
+            sleep 1
             DID_SPAWN=1
             ;;
         *)
