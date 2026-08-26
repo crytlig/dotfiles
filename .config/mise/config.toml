@@ -8,6 +8,8 @@ just = "latest"
 ripgrep = "latest"
 uv = "latest"
 azure-cli = 'latest'
+gum = "latest"
+worktrunk = "latest"
 # langs
 node = 'latest'
 python = 'latest'
