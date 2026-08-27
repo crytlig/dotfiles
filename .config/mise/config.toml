@@ -10,6 +10,8 @@ uv = "latest"
 azure-cli = 'latest'
 gum = "latest"
 worktrunk = "latest"
+tflint = "latest"
+jj = "latest"
 # langs
 node = 'latest'
 python = 'latest'
