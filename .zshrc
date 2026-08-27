@@ -85,8 +85,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(starship init zsh)"
 
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
-
 # pnpm
 export PNPM_HOME="/Users/cliff/Library/pnpm"
 case ":$PATH:" in
@@ -96,3 +94,5 @@ esac
 # pnpm end
 
 eval "$(/var/home/cliff/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
