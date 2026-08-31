@@ -400,7 +400,7 @@ binds {
     // Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock -c 000000"; }
     Super+Shift+Q hotkey-overlay-title="Power Menu" { spawn-sh "$HOME/.config/niri/scripts/power-menu.sh"; }
 
  // Example: Press Mod+Shift+W to clear or set a name
