@@ -1,6 +1,5 @@
 [tools]
 terraform = "latest"
-"vfox:neovim" = "latest"
 gh = "latest"
 lazygit = "latest"
 lazydocker = "latest"
@@ -18,5 +17,10 @@ python = 'latest'
 go = 'latest'
 powershell-core = "latest"
 # term
+"vfox:neovim" = "latest"
+"tree-sitter" = "latest"
 "github:herdrdev/herdr" = 'latest'
 "github:can1357/oh-my-pi" = 'latest'
+
+# LLMs
+"cargo:rtk" = "latest"
