@@ -23,4 +23,4 @@ powershell-core = "latest"
 "github:can1357/oh-my-pi" = 'latest'
 
 # LLMs
-"cargo:rtk" = "latest"
+"github:rtk-ai/rtk" = "latest"
