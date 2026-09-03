@@ -4,10 +4,9 @@ set -euo pipefail
 
 WORKSPACES=(
     "1|herdr|herdr"
-    "2|slack|flatpak|com.slack.Slack"
-    "3|cvation|chrome|Profile 2|https://outlook.cloud.microsoft/mail/|https://teams.microsoft.com"
-    "4|skaylink|chrome|Profile 1|https://outlook.cloud.microsoft/mail/|https://teams.cloud.microsoft"
-    "5|pundl|chrome|Profile 3|https://outlook.office.com/mail/|https://teams.microsoft.com"
+    "2|cvation|chrome|Profile 2|https://outlook.cloud.microsoft/mail/|https://teams.microsoft.com"
+    "3|skaylink|chrome|Profile 1|https://outlook.cloud.microsoft/mail/|https://teams.cloud.microsoft"
+    "4|pundl|chrome|Profile 3|https://outlook.office.com/mail/|https://teams.microsoft.com"
 )
 
 NIRI="${NIRI:-$(command -v niri || echo /usr/bin/niri)}"
@@ -152,6 +151,24 @@ for entry in "${WORKSPACES[@]}"; do
     echo "→ $name:"
     ensure_app "$workspace_id" "$kind" "${fields[@]:3}"
 done
+
+# ────────────────────────────────────────────────────────────────
+#  EXTRA APPS
+# ────────────────────────────────────────────────────────────────
+
+# Launch Slack alongside Chrome on the cvation workspace.
+"$NIRI" msg action focus-workspace cvation
+cvation_id=$("$NIRI" msg -j workspaces | "$JQ" -r --arg name cvation '.[] | select(.name==$name) | .id' | head -1)
+if ! window_exists "$cvation_id" com.slack.Slack; then
+    echo "→ cvation: launching Slack…"
+    "$NIRI" msg action spawn -- "$FF" run com.slack.Slack
+    if ! wait_for_window "$cvation_id" com.slack.Slack; then
+        echo "  ! Slack did not appear on this workspace — check manually"
+    fi
+    DID_SPAWN=1
+else
+    echo "✓ Slack already present on cvation — skipping"
+fi
 
 # Land on the primary workspace (herdr terminal).
 "$NIRI" msg action focus-workspace herdr

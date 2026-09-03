@@ -16,7 +16,6 @@ environment {
 }
 
 workspace "herdr"
-workspace "slack"
 workspace "cvation"
 workspace "skaylink"
 workspace "pundl"
