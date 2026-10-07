@@ -11,6 +11,7 @@ gum = "latest"
 worktrunk = "latest"
 tflint = "latest"
 jj = "latest"
+pi = "latest"
 # langs
 node = 'latest'
 python = 'latest'
@@ -20,7 +21,10 @@ powershell-core = "latest"
 "vfox:neovim" = "latest"
 "tree-sitter" = "latest"
 "github:herdrdev/herdr" = 'latest'
-"github:can1357/oh-my-pi" = 'latest'
+# "github:can1357/oh-my-pi" = 'latest'
+"github:mikker/fut" = 'latest'
+
 
 # LLMs
 "github:rtk-ai/rtk" = "latest"
+
