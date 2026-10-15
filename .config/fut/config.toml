@@ -1,0 +1,151 @@
+#:schema https://fut.sh/schemas/config.json
+
+# extensions = [
+#   "extensions/review-status",
+#   "extensions/run",
+# ]
+
+[alerts]
+signal_outer_terminal = false
+
+[ui]
+pane_layout = "splits" # "splits" or "accordion"
+confirm_close = true   # Require confirmation before closing panes, tabs, or workspaces.
+prefix = "ctrl-b"
+
+[ui.bindings]
+open_command_bar = "space"
+# "run:restart" = "r"
+# open_messages = "m"
+# open_project = "S"
+# reload_config = "R"
+# reload_project_config = "P"
+# enter_copy_mode = "["
+# open_navigator = "s"
+# open_agents = "a"
+# open_left_sidebar = "w"
+# open_right_sidebar = "]"
+# open_tab_bar = "t"
+# open_notifications = "u"
+# focus_next_notification = "prefix"
+# create_workspace = "C"
+# create_tab = "c"
+# rename_session = "S"   # These rename and close actions have no default binding.
+# rename_workspace = "W"
+# rename_tab = "T"
+# close_session = "q"
+# close_workspace = "Q"
+# close_tab = "X"
+# focus_last_tab = "ctrl-t"
+# focus_last_workspace = "ctrl-w"
+# focus_last_session = "ctrl-s"
+# close_pane = "x"
+
+[ui.hotkeys]
+# These run immediately, without the prefix.
+# "ctrl-t" = "open_tab_bar"
+# "ctrl-f" = "open_navigator"
+# "ctrl-r" = "run:restart"
+
+# [trusted_commands.git_diff]
+# title = "Repository diff"
+# binding = "g"
+# program = "~/.dotfiles/tmux/tmux.symlink/git_diff_popup.sh"
+# args = ["--optional-argument"]
+# size = { width = 120, height = 40 }
+
+[ui.icons]
+preset = "nerd_font" # "ascii", "unicode", or "nerd_font"
+# current = "*"      # Every icon may be overridden.
+# closing = "x"
+# overflow = "..."
+# workspace = "W"
+# tab = "T"
+# zoom = "zoom"
+# notification = "• " # Prefix before the unread notification count; spacing is preserved.
+# vertical_divider = "|"
+# pill_left = ""       # Focused tab/workspace pill caps; empty outside "nerd_font".
+# pill_right = ""
+
+[ui.spinner]
+style = "dots" # Browse the built-in styles with `fut --ui-playground`.
+# interval = 80 # Optional frame delay in milliseconds.
+# frames = ["-", "\\", "|", "/"] # Optional custom frames; overrides style.
+
+[ui.styles.current]
+foreground = "blue"
+add_modifiers = ["reversed"]
+remove_modifiers = ["underlined"]
+
+[ui.styles.selected]
+background = "dark_gray"
+remove_modifiers = ["reversed"]
+
+# Navigator resource levels default to red, blue, green, and magenta.
+[ui.styles.session]
+foreground = "red"
+
+[ui.styles.workspace]
+foreground = "blue"
+
+[ui.styles.tab]
+foreground = "green"
+
+[ui.styles.pane]
+foreground = "magenta"
+
+[ui.styles.divider]
+foreground = "dark_gray"
+
+[ui.styles.attention]
+foreground = "yellow"
+add_modifiers = ["bold"]
+
+[ui.styles.activity]
+foreground = "light_cyan"
+
+[ui.styles.added]
+foreground = "green"
+
+[ui.styles.deleted]
+foreground = "red"
+
+[ui.tab_bar]
+position = "top" # "top" or "bottom"
+left = [
+  { segments = [{ token = "workspace.icon", suffix = " " }, { token = "workspace.name", max_width = 20 }], style = "muted", priority = 200 },
+]
+center = [
+  { segments = [{ component = "tabs" }], priority = 100 },
+]
+right = [
+  # { segments = [{ token = "workspace.extension.run.status", inverted = true, pill = true }], priority = 220 },
+  { segments = [{ token = "client.zoom", suffix = " " }], priority = 255 },
+  { segments = [{ token = "client.help" }], style = "muted", priority = 0 },
+]
+
+[ui.tab_bar.item]
+segments = [
+  { text = " " },
+  { token = "tab.index" },
+  { token = "tab.name", prefix = " " },
+  { token = "tab.closing", prefix = " " },
+  { token = "tab.activity", prefix = " " },
+  { text = " " },
+]
+
+[ui.sidebar.left]
+width = 28
+display = "expanded" # "expanded" or "minimized"
+visibility = "automatic" # "visible", "automatic", or "hidden"
+components = [
+  { component = "workspaces", size = "fill", header = [{ token = "session.name", style = "current" }], footer = [{ token = "sidebar.status", style = "muted" }], row = { left = [{ text = " " }], body = [{ token = "workspace.index" }, { token = "workspace.name", prefix = " " }], right = [{ token = "workspace.tab_count" }, { token = "workspace.closing", prefix = " " }, { text = " " }], detail = [{ text = "    " }, { token = "workspace.git_branch", style = "muted" }, { token = "workspace.git_added", prefix = " " }, { token = "workspace.git_deleted", prefix = " " }] } },
+]
+
+[ui.sidebar.right]
+width = 28
+display = "expanded"
+visibility = "automatic"
+components = [
+  { component = "agents", size = "fill", scope = "session" },
+]
