@@ -15,6 +15,7 @@ prefix = "ctrl-b"
 
 [ui.bindings]
 open_command_bar = "space"
+open_right_sidebar = "b"
 # "run:restart" = "r"
 # open_messages = "m"
 # open_project = "S"
@@ -145,7 +146,7 @@ components = [
 [ui.sidebar.right]
 width = 28
 display = "expanded"
-visibility = "automatic"
+visibility = "hidden"
 components = [
   { component = "agents", size = "fill", scope = "session" },
 ]
