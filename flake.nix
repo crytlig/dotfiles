@@ -63,6 +63,7 @@
             gum
             # SG stuff
             claude-code
+            htpasswd
             # AI toolchain
             herdr
             # rtk # Can't compile on v0.43.0 try again soon
