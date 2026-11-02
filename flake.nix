@@ -65,6 +65,7 @@
             claude-code
             kubernetes-helm
             k9s
+            k3d
             # AI toolchain
             herdr
             # rtk # Can't compile on v0.43.0 try again soon
