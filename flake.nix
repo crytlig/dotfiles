@@ -63,7 +63,8 @@
             gum
             # SG stuff
             claude-code
-            htpasswd
+            kubernetes-helm
+            k9s
             # AI toolchain
             herdr
             # rtk # Can't compile on v0.43.0 try again soon
