@@ -8,22 +8,13 @@
 #   - ⌃ alone collides with terminal line editing (⌃H = backspace, ⌃J = newline = hjkl keys)
 #   - ⌥⌘ is a comfortable thumb-chord on a Mac keyboard and is otherwise unused by macOS
 #
-# Layout mirrors the old niri config:
-#   niri Mod+hjkl            -> alt-cmd-hjkl            focus
-#   niri Mod+Ctrl+hjkl       -> alt-cmd-shift-hjkl      move window
-#   niri Mod+1..9            -> alt-cmd-1..9            switch workspace
-#   niri Mod+Ctrl+1..9       -> alt-cmd-shift-1..9      move window to workspace
-#   niri Mod+u / Mod+i       -> alt-cmd-u / alt-cmd-i   prev / next workspace
-#   niri Mod+Space (launch)  -> alt-cmd-space           Spotlight (swap for Raycast)
-#   niri Mod+t (terminal)    -> alt-cmd-t               Ghostty
-
 config-version = 2
 
 # Hot-reload the config on every save (after the first manual reload-config)
 auto-reload-config = true
 
 # Start at login. Also toggleable from the AeroSpace menu bar icon.
-start-at-login = false
+start-at-login = true
 
 after-startup-command = []
 
@@ -46,14 +37,14 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'   # wide monitor => horizontal split
 
-# Gaps. outer.top clears the 40px sketchybar bar (40 + 8 of air)
+# Gaps. outer.top clears the 40px sketchybar bar (40 + 4 of air)
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
-outer.left = 8
-outer.bottom = 8
-outer.top = 48
-outer.right = 8
+outer.left = 2
+outer.bottom = 0
+outer.top = 10
+outer.right = 2
 
 # Example window rule: don't tile the Calculator
 [[on-window-detected]]
@@ -83,8 +74,12 @@ run = 'layout floating'
     alt-cmd-equal = 'resize smart +50'
 
     # --- Layout toggle ---
-    alt-cmd-slash = 'layout tiles horizontal vertical'
+    # ⌥⌘[ tiles, ⌥⌘] accordion (i3-style)
+    alt-cmd-leftSquareBracket = 'layout tiles horizontal vertical'
     alt-cmd-comma = 'layout accordion horizontal vertical'
+
+    # --- Fullscreen (AeroSpace style: fills monitor, gaps off, toggles) ---
+    alt-cmd-f = 'fullscreen'
 
     # --- Switch workspace (niri Mod+1..9) ---
     # Copy a line to add more (up to 9); keep persistent-workspaces in sync
@@ -117,6 +112,6 @@ run = 'layout floating'
 
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
-    r = ['flatten-workspace-tree', 'mode main']          # niri already threw away the layout? reset it
+    r = ['flatten-workspace-tree', 'mode main']          
     f = ['layout floating tiling', 'mode main']          # float/unfloat focused window
     backspace = ['close-all-windows-but-current', 'mode main']
