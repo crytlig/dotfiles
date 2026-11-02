@@ -68,14 +68,6 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
 export SHELL="/bin/zsh"
 
-# bluefin
-# PWAsForFirefox: custom install location (installed under ~/tools)
-export FFPWA_EXECUTABLES="$HOME/tools"
-export FFPWA_SYSDATA="$HOME/tools/firefoxpwa-data"
-
-## WSL
-# export PATH=$PATH:"/mnt/c/Users/ClaesRytlig/AppData/Local/Programs/Microsoft VS Code/bin"
-# export PATH=$PATH:"/mnt/c/Windows/System32"
 export PATH="$PATH:$HOME/.bun/bin"
 export BUILDX_EXPERIMENTAL=1
 
@@ -86,13 +78,11 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init zsh)"
 
 # pnpm
-export PNPM_HOME="/Users/cliff/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
-
-eval "$(/var/home/cliff/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
