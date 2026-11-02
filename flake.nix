@@ -25,6 +25,7 @@
             # reference a pinned package like so
             # inputs.terragrunt.legacyPackages.${system}.terragrunt 
             gnupg
+            fd
             terraform
             terragrunt
             terraform-docs
@@ -48,22 +49,23 @@
             kubectl
             typescript
             go
-            air
-            templ
             gopls
             rustc
             rustup
             cargo-watch
             sqlite
             pack
-            jujutsu
             just
             python313
             ruff
             uv
             mypy
             gum
-            helix
+            # SG stuff
+            claude-code
+            # AI toolchain
+            herdr
+            rtk
           ];
         };
       });
