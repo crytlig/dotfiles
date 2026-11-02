@@ -1,0 +1,6 @@
+[user]
+  name = Claes Rytlig
+  email = crytlig@hotmail.com
+
+[push]
+  autoSetupRemote = true
