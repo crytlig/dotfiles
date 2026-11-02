@@ -17,6 +17,12 @@ _darcs
 
 .gitconfig
 
+# macos only
+brewfile
+
+justfile
+
+
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
 

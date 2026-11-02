@@ -1,0 +1,11 @@
+# Taps
+tap "felixkratz/formulae"
+
+# Formulae & Services
+brew "sketchybar"
+
+# Casks (GUI Apps)
+cask "ghostty"
+
+# CLI tools
+brew "stow"
