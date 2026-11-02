@@ -66,6 +66,7 @@
             # AI toolchain
             herdr
             rtk
+            worktrunk
           ];
         };
       });
