@@ -65,7 +65,7 @@
             claude-code
             # AI toolchain
             herdr
-            rtk
+            # rtk # Can't compile on v0.43.0 try again soon
             worktrunk
           ];
         };
