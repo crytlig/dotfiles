@@ -27,6 +27,7 @@
             gnupg
             fd
             terraform
+            opentofu
             terragrunt
             terraform-docs
             ripgrep
@@ -61,6 +62,7 @@
             uv
             mypy
             gum
+            drawio
             # SG stuff
             claude-code
             kubernetes-helm
