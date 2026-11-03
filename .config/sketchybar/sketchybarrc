@@ -33,11 +33,12 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### AeroSpace Workspace Indicators #####
-# One item per AeroSpace workspace. aerospace.sh highlights the focused
+##### Dinky Workspace Indicators #####
+# One item per dinky workspace. dinky.sh highlights the focused
 # workspace and dims/minimizes empty ones. Clicking a workspace focuses it.
+# dinky pushes state via [hooks] in dinky.toml, which fires workspace_change.
 
-sketchybar --add event aerospace_workspace_change
+sketchybar --add event workspace_change
 
 for sid in 1 2 3 4 5 6
 do
@@ -49,12 +50,12 @@ do
     background.corner_radius=5
     background.height=25
     label.drawing=off
-    script="$PLUGIN_DIR/aerospace.sh"
-    click_script="aerospace workspace $sid"
+    script="$PLUGIN_DIR/dinky.sh"
+    click_script="dinky workspace $sid"
   )
   sketchybar --add item space."$sid" left \
              --set space."$sid" "${workspace[@]}" \
-             --subscribe space."$sid" aerospace_workspace_change front_app_switched
+             --subscribe space."$sid" workspace_change front_app_switched
 done
 
 ##### Adding Left Items #####

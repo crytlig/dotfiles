@@ -1,0 +1,67 @@
+start-at-login = true
+workspaces = 6                  # across all displays, one native Space each
+default-layout = 'tiles'        # tiles (dwindle) | dwindle | accordion | fixed | scrolling | master
+default-tiling = true           # false leaves workspaces untiled unless overridden
+follow-app-activation = true    # Cmd-Tab and Dock clicks switch Spaces the fast way
+float-windows-without-fullscreen = true   # progress windows, About, Calculator and the like float
+fullscreen-width = 1.0          # share of the width a fullscreen window, or a window alone, takes, centred
+ 
+# lone-window-width = 0.75      # lone windows only; omitted uses the resolved fullscreen-width
+# Reserve the top of the screen for sketchybar so tiled windows don't cover it.
+# outer.top should match your sketchybar's height (bar height + padding).
+[gaps]
+outer = { top = 44, bottom = 8, left = 8, right = 8 }
+inner = 8
+
+[borders]
+enabled = true
+width = 4
+active-color = '#ebebeb'
+inactive-color = '#494d64'
+
+# Move focus between windows: option+cmd+hjkl (vim-style arrows).
+# Main mode; adding a [mode.main] replaces the (empty) default binding set.
+[mode.main]
+alt-cmd-h = "focus left"
+alt-cmd-j = "focus down"
+alt-cmd-k = "focus up"
+alt-cmd-l = "focus right"
+
+alt-cmd-1 = "workspace 1"
+alt-cmd-2 = "workspace 2"
+alt-cmd-3 = "workspace 3"
+ctrl-cmd-1 = 'move-window-to-workspace 1'
+ctrl-cmd-2 = 'move-window-to-workspace 2'
+ctrl-cmd-3 = 'move-window-to-workspace 3'
+ctrl-left = 'workspace prev'
+ctrl-right = 'workspace next'
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+cmd-alt-minus = 'resize smart -50'
+cmd-alt-equal = 'resize smart +50'
+cmd-alt-f = 'fullscreen'
+alt-shift-semicolon = 'mode service'
+
+
+[mode.service]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+
+[[rules]]
+app-id = 'com.apple.systempreferences'   # also: app-name, title (regexes), kind (normal|dialog|sheet|panel)
+run = 'layout floating'
+
+# Push state to sketchybar. See dinky.rodeo/commands -> SketchyBar.
+# workspace-change drives the space.* items (dinky.sh); workspace-change/changing use the DINKY_* env vars.
+[hooks]
+startup = ['exec-and-forget brew services restart sketchybar']
+workspace-changing = ['exec-and-forget sketchybar --trigger workspace_changing DINKY_DISPLAY=$DINKY_DISPLAY DINKY_WORKSPACE=$DINKY_WORKSPACE']
+workspace-changed = ['exec-and-forget sketchybar --trigger workspace_change WORKSPACE=$DINKY_WORKSPACE']
+focus-changed = ['exec-and-forget sketchybar --trigger focus_changed']
+mode-changed = ['exec-and-forget sketchybar --trigger mode_changed MODE=$DINKY_MODE']

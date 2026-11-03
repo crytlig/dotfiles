@@ -1,12 +1,12 @@
 # Taps (trusted so formulae/casks from them can be installed)
 tap "felixkratz/formulae", trusted: true
-tap "nikitabobko/tap", trusted: true
+tap "mikker/tap", trusted: true
 
 # Formulae & Services
 brew "sketchybar"
 
 # Casks (GUI Apps)
-cask "aerospace"
+cask "dinky"
 cask "ghostty"
 cask "claude-code@latest"
 
