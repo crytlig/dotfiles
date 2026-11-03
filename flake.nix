@@ -64,7 +64,7 @@
             gum
             drawio
             # SG stuff
-            claude-code
+            # claude-code
             kubernetes-helm
             k9s
             k3d

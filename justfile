@@ -14,3 +14,7 @@ switch:
 brew:
     brew bundle --file=./Brewfile
     brew services restart sketchybar
+
+# Nix Garbage collect
+garbage:
+    nix-store --gc
