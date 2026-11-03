@@ -42,8 +42,13 @@ sketchybar --add event workspace_change
 
 for sid in 1 2 3 4 5 6
 do
+  case "$sid" in
+    1) wicon="󰊠" ;;   # Ghostty ghost
+    *) wicon="$sid"  ;;
+  esac
+
   workspace=(
-    icon="$sid"
+    icon="$wicon"
     icon.padding_left=7
     icon.padding_right=7
     background.color=0x00000000

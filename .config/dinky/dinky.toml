@@ -28,6 +28,8 @@ alt-cmd-j = "focus down"
 alt-cmd-k = "focus up"
 alt-cmd-l = "focus right"
 
+# alt-tab = 'workspace-back-and-forth'
+
 alt-cmd-1 = "workspace 1"
 alt-cmd-2 = "workspace 2"
 alt-cmd-3 = "workspace 3"
