@@ -43,7 +43,7 @@ inner.horizontal = 10
 inner.vertical = 10
 outer.left = 2
 outer.bottom = 0
-outer.top = 10
+outer.top = 41
 outer.right = 2
 
 # Example window rule: don't tile the Calculator

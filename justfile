@@ -3,7 +3,7 @@ default:
   just -l
 
 # Sync stow
-sync-stow:
+stow:
     stow --verbose --target=$HOME --restow .
 
 # Nix switch
