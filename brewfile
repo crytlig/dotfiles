@@ -12,6 +12,3 @@ cask "claude-code@latest"
 
 # CLI tools
 brew "stow"
-
-# Runtimes
-brew "node@26"
