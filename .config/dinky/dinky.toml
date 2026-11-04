@@ -26,10 +26,10 @@ inactive-color = '#494d64'
 # Move focus between windows: option+cmd+hjkl (vim-style arrows).
 # Main mode; adding a [mode.main] replaces the (empty) default binding set.
 [mode.main]
-cmd-h = "focus left"
-cmd-j = "focus down"
-cmd-k = "focus up"
-cmd-l = "focus right"
+shift-cmd-h = "focus left"
+shift-cmd-j = "focus down"
+shift-cmd-k = "focus up"
+shift-cmd-l = "focus right"
 
 # alt-tab = 'workspace-back-and-forth'
 
