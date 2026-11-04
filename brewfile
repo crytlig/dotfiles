@@ -9,6 +9,7 @@ brew "sketchybar"
 cask "dinky"
 cask "ghostty"
 cask "claude-code@latest"
+cask "docker-desktop"
 
 # CLI tools
 brew "stow"

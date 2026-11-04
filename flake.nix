@@ -43,7 +43,6 @@
             gh
             fzf
             direnv
-            docker_29
             ffmpeg
             lazygit
             lazydocker
