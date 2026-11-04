@@ -8,10 +8,13 @@ fullscreen-width = 1.0          # share of the width a fullscreen window, or a w
  
 lone-window-width = 0.75      # lone windows only; omitted uses the resolved fullscreen-width
 
+[display.'LG HDR 5K']
+gaps.outer.top = 45
+
 # Reserve the top of the screen for sketchybar so tiled windows don't cover it.
 # outer.top should match sketchybar's height (bar height + padding).
 [gaps]
-outer = { top = 44, bottom = 8, left = 8, right = 8 }
+outer = { top = 20, bottom = 8, left = 8, right = 8 }
 inner = 8
 
 [borders]
