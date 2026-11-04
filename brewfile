@@ -4,12 +4,13 @@ tap "mikker/tap", trusted: true
 
 # Formulae & Services
 brew "sketchybar"
+brew "terraform-ls"
+
+# CLI tools
+brew "stow"
 
 # Casks (GUI Apps)
 cask "dinky"
 cask "ghostty"
 cask "claude-code@latest"
 cask "docker-desktop"
-
-# CLI tools
-brew "stow"
