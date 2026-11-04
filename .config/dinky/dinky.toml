@@ -26,25 +26,25 @@ inactive-color = '#494d64'
 # Move focus between windows: option+cmd+hjkl (vim-style arrows).
 # Main mode; adding a [mode.main] replaces the (empty) default binding set.
 [mode.main]
-alt-cmd-h = "focus left"
-alt-cmd-j = "focus down"
-alt-cmd-k = "focus up"
-alt-cmd-l = "focus right"
+cmd-h = "focus left"
+cmd-j = "focus down"
+cmd-k = "focus up"
+cmd-l = "focus right"
 
 # alt-tab = 'workspace-back-and-forth'
 
-alt-cmd-1 = "workspace 1"
-alt-cmd-2 = "workspace 2"
-alt-cmd-3 = "workspace 3"
-alt-cmd-4 = "workspace 4"
-alt-cmd-5 = "workspace 5"
-alt-cmd-6 = "workspace 6"
-ctrl-cmd-1 = 'move-window-to-workspace 1'
-ctrl-cmd-2 = 'move-window-to-workspace 2'
-ctrl-cmd-3 = 'move-window-to-workspace 3'
-ctrl-cmd-4 = 'move-window-to-workspace 4'
-ctrl-cmd-5 = 'move-window-to-workspace 5'
-ctrl-cmd-6 = 'move-window-to-workspace 6'
+ctrl-cmd-1 = "workspace 1"
+ctrl-cmd-2 = "workspace 2"
+ctrl-cmd-3 = "workspace 3"
+ctrl-cmd-4 = "workspace 4"
+ctrl-cmd-5 = "workspace 5"
+ctrl-cmd-6 = "workspace 6"
+ctrl-shift-cmd-1 = 'move-window-to-workspace 1'
+ctrl-shift-cmd-2 = 'move-window-to-workspace 2'
+ctrl-shift-cmd-3 = 'move-window-to-workspace 3'
+ctrl-shift-cmd-4 = 'move-window-to-workspace 4'
+ctrl-shift-cmd-5 = 'move-window-to-workspace 5'
+ctrl-shift-cmd-6 = 'move-window-to-workspace 6'
 ctrl-left = 'workspace prev'
 ctrl-right = 'workspace next'
 alt-shift-h = 'move left'
@@ -54,17 +54,18 @@ alt-shift-l = 'move right'
 cmd-alt-minus = 'resize smart -50'
 cmd-alt-equal = 'resize smart +50'
 cmd-alt-f = 'fullscreen'
-alt-shift-semicolon = 'mode service'
+
+# alt-shift-semicolon = 'mode service'
 
 
-[mode.service]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main']
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
+# [mode.service]
+# esc = ['reload-config', 'mode main']
+# r = ['flatten-workspace-tree', 'mode main']
+# alt-shift-h = ['join-with left', 'mode main']
+# alt-shift-j = ['join-with down', 'mode main']
+# alt-shift-k = ['join-with up', 'mode main']
+# alt-shift-l = ['join-with right', 'mode main']
+#
 [[rules]]
 app-id = 'com.apple.systempreferences'   # also: app-name, title (regexes), kind (normal|dialog|sheet|panel)
 run = 'layout floating'
