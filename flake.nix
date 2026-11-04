@@ -62,6 +62,7 @@
             mypy
             gum
             drawio
+            openvpn
             # SG stuff
             # claude-code
             kubernetes-helm
