@@ -54,7 +54,8 @@ alt-shift-l = 'move right'
 cmd-alt-minus = 'resize smart -50'
 cmd-alt-equal = 'resize smart +50'
 cmd-alt-f = 'fullscreen'
-
+cmd-alt-left-bracket = 'layout accordion'
+cmd-alt-right-bracket = 'layout tiles'
 # alt-shift-semicolon = 'mode service'
 
 
