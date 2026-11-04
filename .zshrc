@@ -20,6 +20,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
 
+if [[ -f ~/.local_exports.sh ]]; then
+	source ~/.local_exports.sh
+fi
+
 # Custom completions directory - must be before oh-my-zsh compinit
 fpath=(~/.zsh/completions $fpath)
 
