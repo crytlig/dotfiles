@@ -7,7 +7,7 @@ stow:
     stow --verbose --target=$HOME --restow .
 
 # Nix switch
-switch:
+nix:
     nix run ~/dotfiles/#dev.switch
 
 # Brew installation files for mac
@@ -18,3 +18,7 @@ brew:
 # Nix Garbage collect
 garbage:
     nix-store --gc
+
+# Update flake.lock
+flake-update:
+    nix flake update
