@@ -9,9 +9,17 @@ brew "terraform-ls"
 # CLI tools
 brew "stow"
 brew "defaultbrowser"
+brew "mise"
+# migrated from flake.nix (system libs / not a good fit for mise)
+brew "gnupg"
+brew "tree"
+brew "ffmpeg"
+brew "openvpn"
+brew "tlrc" # tldr client
 
 # Casks (GUI Apps)
 cask "dinky"
 cask "ghostty"
 cask "claude-code@latest"
 cask "docker-desktop"
+cask "drawio"

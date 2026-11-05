@@ -8,6 +8,8 @@
     nix-ai-tools.url = "github:numtide/nix-ai-tools";
     # Pin a specific version like below. Find shas and versions from https://www.nixhub.io/
     # terragrunt.url = "github:nixos/nixpkgs/785feb91183a50959823ff9ba9ef673105259cd5";
+    # terraform is unfree (never in the binary cache); pin to a rev already built locally
+    terraform-pin.url = "github:nixos/nixpkgs/335f0738cb2fa9708f3f428e39d2eae975d1338d";
   };
 
   outputs = { self, nixpkgs, flake-utils, flakey-profile, nix-ai-tools, ...}@inputs:
@@ -16,6 +18,21 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          # config.allowBroken = true;
+          overlays = [
+            # fabric requires invoke<3 but nixpkgs ships invoke 3 (pulled in by azure-cli)
+            (final: prev: {
+              pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+                (pyFinal: pyPrev: {
+                  fabric = pyPrev.fabric.overridePythonAttrs (old: {
+                    dontCheckRuntimeDeps = true;
+                    # fabric's test suite fails against invoke 3 (ConnectionCall.make_context API change)
+                    doCheck = false;
+                  });
+                })
+              ];
+            })
+          ];
         };
       in
       {
@@ -26,7 +43,7 @@
             # inputs.terragrunt.legacyPackages.${system}.terragrunt 
             gnupg
             fd
-            terraform
+            (import inputs.terraform-pin { inherit system; config.allowUnfree = true; }).terraform
             opentofu
             terragrunt
             terraform-docs

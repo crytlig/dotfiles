@@ -12,10 +12,33 @@ worktrunk = "latest"
 tflint = "latest"
 jj = "latest"
 pi = "latest"
+# migrated from flake.nix
+fd = "latest"
+bat = "latest"
+jq = "latest"
+fzf = "latest"
+direnv = "latest"
+starship = "latest"
+opentofu = "latest"
+terragrunt = "latest"
+terraform-docs = "latest"
+kubectl = "latest"
+helm = "latest"
+k9s = "latest"
+k3d = "latest"
+pack = "latest"
+ruff = "latest"
+tailwindcss = "latest"
+"npm:typescript" = "latest"
+"pipx:mypy" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"cargo:cargo-watch" = "latest"
 # langs
 node = 'latest'
 python = 'latest'
 go = 'latest'
+rust = 'latest'
+lua = 'latest'
 powershell-core = "latest"
 # term
 "vfox:neovim" = "latest"
