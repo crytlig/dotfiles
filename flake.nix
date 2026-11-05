@@ -63,6 +63,7 @@
             gum
             drawio
             openvpn
+            azure-cli
             # SG stuff
             # claude-code
             kubernetes-helm
