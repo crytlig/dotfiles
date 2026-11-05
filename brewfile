@@ -8,6 +8,7 @@ brew "terraform-ls"
 
 # CLI tools
 brew "stow"
+brew "defaultbrowser"
 
 # Casks (GUI Apps)
 cask "dinky"
