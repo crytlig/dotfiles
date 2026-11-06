@@ -1,6 +1,7 @@
 # Taps (trusted so formulae/casks from them can be installed)
 tap "felixkratz/formulae", trusted: true
 tap "mikker/tap", trusted: true
+tap "rtk-ai/tap"
 
 # Formulae & Services
 brew "sketchybar"
@@ -16,6 +17,7 @@ brew "tree"
 brew "ffmpeg"
 brew "openvpn"
 brew "tlrc" # tldr client
+brew "rtk"
 
 # Casks (GUI Apps)
 cask "dinky"
