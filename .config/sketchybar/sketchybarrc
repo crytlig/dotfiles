@@ -44,6 +44,10 @@ for sid in 1 2 3 4 5 6
 do
   case "$sid" in
     1) wicon="󰊠" ;;   # Ghostty ghost
+    2) wicon="󰈹" ;;   # Firefox
+    3) wicon="󰒱" ;;   # Slack
+    4) wicon="󰗡" ;;   # Linear
+    5) wicon="󰇮" ;;   # Mail
     *) wicon="$sid"  ;;
   esac
 
