@@ -36,3 +36,6 @@ style = 'blue bold'
 
 [terraform]
 disabled = true
+
+[kubernetes]
+disabled = false 
