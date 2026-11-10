@@ -80,10 +80,10 @@
             gum
             drawio
             openvpn
-            azure-cli
             # SG stuff
             # claude-code
             kubernetes-helm
+            kubectx
             k9s
             k3d
             # AI toolchain
