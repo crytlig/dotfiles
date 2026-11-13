@@ -44,7 +44,7 @@ rex.bind("pane/=", "pane.balance")
 rex.bind("pane/z", "pane.zoom")
 
 -- One-shot actions (leave the mode first)
-rex.bind("pane/r", "pane_mode_then", { action = "pane.rename", description = "rename" })
+rex.bind("pane/r", "pane_mode_then", { action = "pane.rename"})
 rex.bind("pane/f", "pane_mode_then", { action = "pane.float" })
 rex.bind("pane/t", "pane_mode_then", { action = "pane.move_to_new_tab" })
 rex.bind("pane/shift+t", "pane_mode_then", { action = "pane.move_to_tab" })
@@ -52,3 +52,66 @@ rex.bind("pane/x>x", "pane_mode_then", { action = "pane.close" })
 
 -- Session shortcuts
 rex.bind("shift+cmd+r", "session.rename")
+
+-- New session, then open the rename prompt so it gets a real name
+-- instead of a generated one.
+rex.action{
+  name  = "session_new_named",
+  title = "New Named Session",
+  run   = function(ctx)
+    -- The client's session.rename prompt targets whichever session the app
+    -- shows, and the switch to a new session lands too late for it. So
+    -- instead the new session opens with a small floating prompt that
+    -- renames the session itself by ID and then closes.
+    local created = rex.call("session.create", {
+      initial_windows = {
+        { layout = { block = { flavor = "com.superlogical.terminal.shell" } } },
+      },
+    })
+    local sid = created.session_id
+    -- Required before adding blocks to a session we didn't start in.
+    rex.call("session.attach", { session_id = sid })
+    local prev = (ctx and ctx.session_id) or ""
+    -- zsh line editor reading one key at a time, so escape can cancel:
+    -- enter = keep name (empty keeps the generated one),
+    -- escape / ctrl+c = go back to the previous session and delete this one.
+    local script = [=[
+sid=$1 prev=$2 name=
+cancel() {
+  [[ -n $prev ]] && rex do session.select session_id="$prev" >/dev/null 2>&1
+  rex kill "$sid" >/dev/null 2>&1
+  exit 0
+}
+trap cancel INT
+printf 'Session name: '
+while read -rsk1 c; do
+  case $c in
+    $'\n'|$'\r') break ;;
+    $'\e')
+      # A lone escape cancels; arrow keys etc. send more bytes right after.
+      if read -rsk1 -t 0.05 c; then
+        while read -rsk1 -t 0.01 c; do :; done
+        continue
+      fi
+      cancel ;;
+    $'\x03') cancel ;;
+    $'\x7f'|$'\b') [[ -n $name ]] && { name=${name%?}; printf '\b \b'; } ;;
+    [[:print:]]) name+=$c; printf '%s' "$c" ;;
+  esac
+done
+[[ -n $name ]] && rex session rename "$sid" "$name" >/dev/null
+]=]
+    rex.call("session.new_layer", {
+      session_id = sid,
+      bounds     = { 0.25, 0.4, 0.5, 0.12 },
+      focus      = true,
+      layout     = { block = {
+        flavor  = "com.superlogical.terminal.shell",
+        label   = "name session",
+        options = { command = { "zsh", "-fc", script, "zsh", sid, prev } },
+      } },
+    })
+    rex.client.queue("session.select", { session_id = sid })
+  end,
+}
+rex.bind("shift+cmd+n", "session_new_named")

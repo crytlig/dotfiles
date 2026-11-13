@@ -49,7 +49,7 @@ format = '[$symbol$context( \($namespace\))]($style) '
 # equals "admin_user"
 context_pattern = "k8sprod"
 style = "bold red"
-symbol = "🚨🚨"
+symbol = "🚨"
 
 [[kubernetes.contexts]]
 context_pattern = "k8sdev"
