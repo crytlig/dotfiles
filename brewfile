@@ -1,28 +1,25 @@
+# Brew is only for macOS-specific things and tools mise can't provide.
+
 # Taps (trusted so formulae/casks from them can be installed)
 tap "felixkratz/formulae", trusted: true
 tap "mikker/tap", trusted: true
-tap "rtk-ai/tap"
 
-# Formulae & Services
+# macOS-specific
 brew "sketchybar"
-brew "terraform-ls"
-
-# CLI tools
-brew "stow"
 brew "defaultbrowser"
+
+# Bootstrap
 brew "mise"
-# migrated from flake.nix (system libs / not a good fit for mise)
+brew "stow"
+
+# Not in the mise registry / system libs
 brew "gnupg"
 brew "tree"
 brew "ffmpeg"
 brew "openvpn"
-brew "tlrc" # tldr client
-brew "rtk"
 
 # Casks (GUI Apps)
 cask "dinky"
 cask "ghostty"
-cask "claude-code@latest"
 cask "docker-desktop"
 cask "drawio"
-cask "azure-cli"

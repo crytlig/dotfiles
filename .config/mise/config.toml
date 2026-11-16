@@ -6,13 +6,11 @@ lazydocker = "latest"
 just = "latest"
 ripgrep = "latest"
 uv = "latest"
-azure-cli = 'latest'
+# azure-cli = 'latest'
 gum = "latest"
 worktrunk = "latest"
 tflint = "latest"
-jj = "latest"
 pi = "latest"
-# migrated from flake.nix
 fd = "latest"
 bat = "latest"
 jq = "latest"
@@ -24,11 +22,16 @@ terragrunt = "latest"
 terraform-docs = "latest"
 kubectl = "latest"
 helm = "latest"
+kubectx = "latest"
+kubens = "latest"
+terraform-ls = "latest"
+tlrc = "latest"
+claude = "latest"
 k9s = "latest"
 k3d = "latest"
 pack = "latest"
 ruff = "latest"
-tailwindcss = "latest"
+# tailwindcss = "latest"
 "npm:typescript" = "latest"
 "pipx:mypy" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
@@ -39,13 +42,10 @@ python = 'latest'
 go = 'latest'
 rust = 'latest'
 lua = 'latest'
-powershell-core = "latest"
 # term
-"vfox:neovim" = "latest"
+neovim = "latest"
 "tree-sitter" = "latest"
 "github:herdrdev/herdr" = 'latest'
-# "github:can1357/oh-my-pi" = 'latest'
-"github:mikker/fut" = 'latest'
 
 
 # LLMs

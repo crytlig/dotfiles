@@ -2,7 +2,6 @@
 
 The dotfiles are managed with stow for symlinking.
 
-
 ## Clone
 
 This repo has submodules. Clone those as well.
@@ -17,17 +16,16 @@ git clone --recursive https://github.com/Crytlig/dotfiles
 git submodule update --recursive --remote
 ```
 
-## Flake
+## Packages
 
-Any extra arguments to mkProfile are forwarded directly to pkgs.buildEnv.
+CLI tools and languages are managed by [mise](https://mise.jdx.dev) via
+`.config/mise/config.toml` (stowed to `~/.config/mise/config.toml`).
 
-### Usage:
-Switch to this flake:
+The `brewfile` only holds macOS-specific things (sketchybar, dinky, GUI casks)
+and the few tools mise can't provide, including mise itself.
 
-`nix run ~/dotfiles/#dev.switch`
-
-Revert a dev change (note: does not revert pins):
-`nix run ~/dotfiles/#dev.rollback`
-
-Build, without switching:
-`nix build ~/dotfiles/#dev`
+```bash
+just brew   # brew bundle (installs mise + stow first)
+just stow   # symlink dotfiles
+just mise   # install everything in the mise config
+```

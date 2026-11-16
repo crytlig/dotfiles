@@ -6,19 +6,15 @@ default:
 stow:
     stow --verbose --target=$HOME --restow .
 
-# Nix switch
-nix:
-    nix run ~/dotfiles/#dev.switch
+# Install tools from mise config
+mise:
+    mise install
+
+# Upgrade mise tools to latest
+mise-upgrade:
+    mise upgrade
 
 # Brew installation files for mac
 brew:
-    brew bundle --file=./Brewfile
+    brew bundle --file=./brewfile
     brew services restart sketchybar
-
-# Nix Garbage collect
-garbage:
-    nix-store --gc
-
-# Update flake.lock
-flake-update:
-    nix flake update

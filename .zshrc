@@ -1,3 +1,6 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(mise activate zsh)"
+
 # zshrc
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -29,9 +32,6 @@ fpath=(~/.zsh/completions $fpath)
 
 export PAGER=cat
 
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
 unsetopt BEEP
 
 

@@ -37,10 +37,3 @@ justfile
 
 # Ignore vscode
 vscode_keybindings.json
-
-# Ignore flakes. Not working perfectly on macos... ./.Trash is unpermitted, and it requires to do something, I guess...
-flake.nix
-flake.lock
-result/
-
-
