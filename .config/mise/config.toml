@@ -6,7 +6,7 @@ lazydocker = "latest"
 just = "latest"
 ripgrep = "latest"
 uv = "latest"
-# azure-cli = 'latest'
+azure-cli = { version = "latest", uvx_args = "--python 3.14" } # pymsalruntime has no cp315 wheels yet
 gum = "latest"
 worktrunk = "latest"
 tflint = "latest"
