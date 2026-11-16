@@ -45,9 +45,6 @@ lua = 'latest'
 # term
 neovim = "latest"
 "tree-sitter" = "latest"
-"github:herdrdev/herdr" = 'latest'
-
-
 # LLMs
 "github:rtk-ai/rtk" = "latest"
 
