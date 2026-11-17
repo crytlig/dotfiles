@@ -11,6 +11,10 @@ alias tfd='terraform destroy'
 alias tfda='terraform destroy -auto-approve'
 alias tfc='terraform console'
 
+# worktrunk
+alias wts='wt switch -c'
+alias wtm='wt switch main'
+
 myip() {
   local ip=$(curl -s icanhazip.com)
 
@@ -20,10 +24,6 @@ myip() {
     echo "$ip" | tee >(xclip -selection clipboard)
   fi
 }
-
-## Stupid aliases basically to just open nv in temporary
-## mode and write to same files again and again
-alias standup='nv ~/repos/next/documents/stand_up'
 
 delete_workflow_runs() {
     set -eo pipefail
@@ -55,14 +55,6 @@ delete_workflow_runs() {
     # F*** this jq and xargs syntax in particular.............
     gh api -X GET "/repos/$owner/$repo/actions/workflows/$workflow_id/runs?per_page=$deletions" | jq '.workflow_runs[] | .id' -r \
     | xargs -t -I{} gh api --silent -X DELETE "/repos/$owner/$repo/actions/runs/{}" || error_exit "Failed to delete workflow run."
-}
-
-tns() {
-    local name="${1:?session name}"
-    local dir="${2:-.}"
-    # Replace any ~ with HOME dir. Tmux does not expand properly
-    dir="${dir/#\~/$HOME}"
-    tmux new-session -d -s "$name" -c "$dir"
 }
 
 qme() {
