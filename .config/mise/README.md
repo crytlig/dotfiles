@@ -8,7 +8,8 @@ used by things that don't load the shell config).
 
 ```bash
 mise install            # install everything in config.toml (just mise)
-mise upgrade            # upgrade "latest" tools and remove old versions (just mise-upgrade)
+mise outdated           # show tools with newer versions than the pinned ones
+mise upgrade --bump     # upgrade and rewrite the pins in config.toml (or edit the version by hand)
 mise ls                 # list installed tools and where they're configured
 mise use -g <tool>      # add a tool to the global config and install it
 mise doctor             # diagnose activation / PATH problems
@@ -37,6 +38,9 @@ mise cache clear        # clear download / version-list cache
 
 ## Gotchas
 
+- Every tool is pinned to an exact version (no `latest`), so nothing changes until a
+  pin is bumped on purpose.
+
 - `python = 'latest'` can move ahead of what pypi tools support. Pin a single tool's
   interpreter with `uvx_args`, e.g.
-  `azure-cli = { version = "latest", uvx_args = "--python 3.14" }`.
+  `azure-cli = { version = "2.92.0", uvx_args = "--python 3.14" }`.
