@@ -7,7 +7,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
 plugins=(
-	git
 	docker
 	kubectx
 	kubectl
@@ -17,7 +16,6 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	zsh-interactive-cd
-	vscode
 )
 
 source $ZSH/oh-my-zsh.sh

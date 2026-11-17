@@ -11,6 +11,26 @@ alias tfd='terraform destroy'
 alias tfda='terraform destroy -auto-approve'
 alias tfc='terraform console'
 
+# git
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit --verbose'
+alias gco='git checkout'
+alias gd='git diff'
+alias gfa='git fetch --all --tags --prune'
+alias gl='git pull'
+alias gp='git push'
+alias gpr='git pull --rebase'
+alias gpu='git push upstream'
+alias gsb='git status --short --branch'
+alias gsh='git show'
+alias gss='git status --short'
+alias gst='git status'
+
+# gh cli
+alias ghs='gh auth switch'
+
 # worktrunk
 alias wts='wt switch -c'
 alias wtm='wt switch main'
