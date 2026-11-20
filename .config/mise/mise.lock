@@ -5,7 +5,7 @@ lockfile_version = 4
 [[tools.azure-cli]]
 version = "2.92.0"
 backend = "pypi:azure-cli"
-specifiers = ["latest"]
+specifiers = ["2.92.0"]
 
 [tools.azure-cli.options]
 dependency_prereleases = "allow"
@@ -15,7 +15,7 @@ with = '["pip"]'
 [[tools.bat]]
 version = "0.26.1"
 backend = "aqua:sharkdp/bat"
-specifiers = ["latest"]
+specifiers = ["0.26.1"]
 
 [tools.bat."platforms.linux-arm64"]
 checksum = "sha256:422eb73e11c854fddd99f5ca8461c2f1d6e6dce0a2a8c3d5daade5ffcb6564aa"
@@ -62,12 +62,12 @@ url_api = "https://api.github.com/repos/sharkdp/bat/releases/assets/323549116"
 [[tools."cargo:cargo-watch"]]
 version = "8.5.3"
 backend = "cargo:cargo-watch"
-specifiers = ["latest"]
+specifiers = ["8.5.3"]
 
 [[tools.claude]]
 version = "2.1.325"
 backend = "aqua:anthropics/claude-code"
-specifiers = ["latest"]
+specifiers = ["2.1.325"]
 
 [tools.claude."platforms.linux-arm64"]
 checksum = "sha256:2abe2bea8b802190a303f335b0fd09f95eb775457e99df5a4778b09dfab6bbd6"
@@ -114,7 +114,7 @@ url_api = "https://api.github.com/repos/anthropics/claude-code/releases/assets/7
 [[tools.direnv]]
 version = "2.38.2"
 backend = "aqua:direnv/direnv"
-specifiers = ["latest"]
+specifiers = ["2.38.2"]
 
 [tools.direnv."platforms.linux-arm64"]
 checksum = "sha256:ec2a32dbe2f19dd085bd9315a1b4ea88b55ec288aa7eabe8723490baf466cb23"
@@ -155,7 +155,7 @@ url_api = "https://api.github.com/repos/direnv/direnv/releases/assets/627455432"
 [[tools.fd]]
 version = "10.5.2"
 backend = "aqua:sharkdp/fd"
-specifiers = ["latest"]
+specifiers = ["10.5.2"]
 
 [tools.fd."platforms.linux-arm64"]
 checksum = "sha256:4b144f38bd7352cd4c95020b58e8e575476e60edcdf1dc5e0733e3d01efba6dd"
@@ -202,7 +202,7 @@ provenance = "github-attestations"
 [[tools.fzf]]
 version = "0.75.0"
 backend = "aqua:junegunn/fzf"
-specifiers = ["latest"]
+specifiers = ["0.75.0"]
 
 [tools.fzf."platforms.linux-arm64"]
 checksum = "sha256:bd0717badb6a5620387e014bb94209aac4d9eab6ab77b5348eabb0833aeb4d59"
@@ -249,7 +249,7 @@ url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/720590885"
 [[tools.gh]]
 version = "2.104.0"
 backend = "aqua:cli/cli"
-specifiers = ["latest"]
+specifiers = ["2.104.0"]
 
 [tools.gh."platforms.linux-arm64"]
 checksum = "sha256:cb34cefc6f4e77b90731374a2b737516bb8f3033c6ca46aa949e5344f68069e3"
@@ -296,7 +296,7 @@ provenance = "github-attestations"
 [[tools."github:rtk-ai/rtk"]]
 version = "1.2.0"
 backend = "github:rtk-ai/rtk"
-specifiers = ["latest"]
+specifiers = ["1.2.0"]
 
 [tools."github:rtk-ai/rtk"."platforms.linux-arm64"]
 checksum = "sha256:93c1dcd37fd5fcae8fa772a5b5c34a30af142ace4f4081c8f98319146b7a10a4"
@@ -343,7 +343,7 @@ url_api = "https://api.github.com/repos/rtk-ai/rtk/releases/assets/723664882"
 [[tools.go]]
 version = "1.27.4"
 backend = "core:go"
-specifiers = ["latest"]
+specifiers = ["1.27.4"]
 
 [tools.go."platforms.linux-arm64"]
 checksum = "sha256:3392582988a273a87ab5043ee1b2c9c17a2c3c00580bf9326c47a2e0aaaeac92"
@@ -376,12 +376,12 @@ url = "https://dl.google.com/go/go1.27.4.windows-amd64.zip"
 [[tools."go:golang.org/x/tools/gopls"]]
 version = "0.24.0"
 backend = "go:golang.org/x/tools/gopls"
-specifiers = ["latest"]
+specifiers = ["0.24.0"]
 
 [[tools.gum]]
 version = "2.0.2"
 backend = "aqua:charmbracelet/gum"
-specifiers = ["latest"]
+specifiers = ["2.0.2"]
 
 [tools.gum."platforms.linux-arm64"]
 checksum = "sha256:8ebf8b54ec1e8c81f2bb58b59ff9b70998186a4d11375f0cf357b80e0ccfa1d5"
@@ -428,7 +428,7 @@ provenance = "cosign"
 [[tools.helm]]
 version = "4.3.2"
 backend = "aqua:helm/helm"
-specifiers = ["latest"]
+specifiers = ["4.3.2"]
 
 [tools.helm."platforms.linux-arm64"]
 checksum = "sha256:df31cb61680ef728f82c770e5280dd565617bee6b039d37e85c677288be4bbb0"
@@ -461,7 +461,7 @@ url = "https://get.helm.sh/helm-v4.3.2-windows-amd64.tar.gz"
 [[tools.jq]]
 version = "1.8.2"
 backend = "aqua:jqlang/jq"
-specifiers = ["latest"]
+specifiers = ["1.8.2"]
 
 [tools.jq."platforms.linux-arm64"]
 checksum = "sha256:8b85c817833814ddca00a144c33705546355afccf0cf39b188f3cdb48b852309"
@@ -508,7 +508,7 @@ provenance = "github-attestations"
 [[tools.just]]
 version = "1.59.0"
 backend = "aqua:casey/just"
-specifiers = ["latest"]
+specifiers = ["1.59.0"]
 
 [tools.just."platforms.linux-arm64"]
 checksum = "sha256:23871b1702bfd550fb5f901778fd4290ecf2ee034a45a889fbe96d89b188086d"
@@ -555,7 +555,7 @@ url_api = "https://api.github.com/repos/casey/just/releases/assets/643131303"
 [[tools.k3d]]
 version = "5.9.0"
 backend = "aqua:k3d-io/k3d"
-specifiers = ["latest"]
+specifiers = ["5.9.0"]
 
 [tools.k3d."platforms.linux-arm64"]
 checksum = "sha256:03cde5cf23e6e8e67de5a039ecf26e5b85aca82fba3e5d13dadf904cd218a250"
@@ -602,7 +602,7 @@ url_api = "https://api.github.com/repos/k3d-io/k3d/releases/assets/436305724"
 [[tools.k9s]]
 version = "0.51.0"
 backend = "aqua:derailed/k9s"
-specifiers = ["latest"]
+specifiers = ["0.51.0"]
 
 [tools.k9s."platforms.linux-arm64"]
 checksum = "sha256:3ee05c82e5f9198928a4e86133608ba6a2c10a2244d6a7789e820f78319d640c"
@@ -649,7 +649,7 @@ url_api = "https://api.github.com/repos/derailed/k9s/releases/assets/440224317"
 [[tools.kubectl]]
 version = "1.37.2"
 backend = "aqua:kubernetes/kubernetes/kubectl"
-specifiers = ["latest"]
+specifiers = ["1.37.2"]
 
 [tools.kubectl."platforms.linux-arm64"]
 checksum = "sha256:fcc16f63186659d9722014b7e02d5fdd2d4e669cb8c0ab66365d7d3b8ba03509"
@@ -682,7 +682,7 @@ url = "https://dl.k8s.io/v1.37.2/bin/windows/amd64/kubectl.exe"
 [[tools.kubectx]]
 version = "0.11.0"
 backend = "aqua:ahmetb/kubectx"
-specifiers = ["latest"]
+specifiers = ["0.11.0"]
 
 [tools.kubectx."platforms.linux-arm64"]
 checksum = "sha256:1dac2072216689e773325cb7587b858ea7415706ebcf04e23bf80e7e70555340"
@@ -729,7 +729,7 @@ url_api = "https://api.github.com/repos/ahmetb/kubectx/releases/assets/382590966
 [[tools.kubens]]
 version = "0.11.0"
 backend = "aqua:ahmetb/kubectx/kubens"
-specifiers = ["latest"]
+specifiers = ["0.11.0"]
 
 [tools.kubens."platforms.linux-arm64"]
 checksum = "sha256:37058abe82ef20c93b44f3dc8ca2382dbb95d416cec958fbf7b8f79f011be86c"
@@ -776,7 +776,7 @@ url_api = "https://api.github.com/repos/ahmetb/kubectx/releases/assets/382590990
 [[tools.lazydocker]]
 version = "0.25.2"
 backend = "aqua:jesseduffield/lazydocker"
-specifiers = ["latest"]
+specifiers = ["0.25.2"]
 
 [tools.lazydocker."platforms.linux-arm64"]
 checksum = "sha256:005c38b685aaa557e7d646d83a3dadb5024340eeed8c6a2e1949eee6f530de23"
@@ -823,7 +823,7 @@ url_api = "https://api.github.com/repos/jesseduffield/lazydocker/releases/assets
 [[tools.lazygit]]
 version = "0.66.3"
 backend = "aqua:jesseduffield/lazygit"
-specifiers = ["latest"]
+specifiers = ["0.66.3"]
 
 [tools.lazygit."platforms.linux-arm64"]
 checksum = "sha256:ac0b48237f3d0283813e7154ec063237e519532feb0470c0881a1793ee78fd42"
@@ -870,7 +870,7 @@ url_api = "https://api.github.com/repos/jesseduffield/lazygit/releases/assets/72
 [[tools.lua]]
 version = "5.5.1"
 backend = "vfox:jdx/vfox-lua"
-specifiers = ["latest"]
+specifiers = ["5.5.1"]
 
 [tools.lua."platforms.linux-arm64"]
 checksum = "sha256:1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
@@ -903,7 +903,7 @@ url = "https://www.lua.org/ftp/lua-5.5.1.tar.gz"
 [[tools.neovim]]
 version = "0.12.6"
 backend = "vfox:jdx/vfox-neovim"
-specifiers = ["latest"]
+specifiers = ["0.12.6"]
 
 [tools.neovim."platforms.linux-arm64"]
 checksum = "sha256:8f1f64a0bdb97247034038c3823c6cbad5bdf9ecd5751b85494b71c3ee04c815"
@@ -936,7 +936,7 @@ url = "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-win64.zip
 [[tools.node]]
 version = "26.13.1"
 backend = "core:node"
-specifiers = ["latest"]
+specifiers = ["26.13.1"]
 
 [tools.node."platforms.linux-arm64"]
 checksum = "sha256:80a330b35415382878df18d41afbd106ea89bfb3be0087d6608e289a14c5cc7d"
@@ -970,12 +970,12 @@ url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 version = "7.0.2"
 aube = { path = "locks/npm-typescript/7.0.2", digest = "sha256:3d06b3b23564c68cdad7815c356edb1506fab1c42bfb8c54234134fd9650ec17" }
 backend = "npm:typescript"
-specifiers = ["latest"]
+specifiers = ["7.0.2"]
 
 [[tools.opentofu]]
 version = "1.13.9"
 backend = "aqua:opentofu/opentofu"
-specifiers = ["latest"]
+specifiers = ["1.13.9"]
 
 [tools.opentofu."platforms.linux-arm64"]
 checksum = "sha256:5dc196dde75b667e4806d358310ec96742774cd0993c54c1237efee5644b69b8"
@@ -1022,7 +1022,7 @@ url_api = "https://api.github.com/repos/opentofu/opentofu/releases/assets/714327
 [[tools.pack]]
 version = "0.40.11"
 backend = "aqua:buildpacks/pack"
-specifiers = ["latest"]
+specifiers = ["0.40.11"]
 
 [tools.pack."platforms.linux-arm64"]
 checksum = "sha256:3f8ccaacd512a203849944b3591f19f3ec5994188203386cb0f7abfb5fa93c56"
@@ -1067,62 +1067,61 @@ url = "https://github.com/buildpacks/pack/releases/download/v0.40.11/pack-v0.40.
 url_api = "https://api.github.com/repos/buildpacks/pack/releases/assets/741477497"
 
 [[tools.pi]]
-version = "1.5.2"
+version = "1.6.0"
 backend = "aqua:earendil-works/pi"
-specifiers = ["latest"]
+specifiers = ["1.6.0"]
 
 [tools.pi."platforms.linux-arm64"]
-checksum = "sha256:42805cd5615952fcbbfc9c56b04f8feb84395134952e169a6cdc8d7676975666"
+checksum = "sha256:5404547b9739be596d50ae7142c52535899e8e7dd37a7bace9be593e0355b468"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292536"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562443"
 
 [tools.pi."platforms.linux-arm64-musl"]
-checksum = "sha256:42805cd5615952fcbbfc9c56b04f8feb84395134952e169a6cdc8d7676975666"
+checksum = "sha256:5404547b9739be596d50ae7142c52535899e8e7dd37a7bace9be593e0355b468"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292536"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562443"
 
 [tools.pi."platforms.linux-x64"]
-checksum = "sha256:811c6f2c9e7aaee252b5404252e556fb713aa209c1f7f924226aa77d4ef70cb5"
+checksum = "sha256:ef77dbe4379b3bdeb425a1e1b862fa3c915c255000dfe4965c98eee96a5765d1"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-linux-x64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292534"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562455"
 
 [tools.pi."platforms.linux-x64-musl"]
-checksum = "sha256:811c6f2c9e7aaee252b5404252e556fb713aa209c1f7f924226aa77d4ef70cb5"
+checksum = "sha256:ef77dbe4379b3bdeb425a1e1b862fa3c915c255000dfe4965c98eee96a5765d1"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-linux-x64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292534"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-linux-x64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562455"
 
 [tools.pi."platforms.macos-arm64"]
-checksum = "sha256:56b5e194d485ced555667b8ba3276157a8272e9ecde9e001e428af80985bdd9b"
-checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292526"
+checksum = "sha256:6429287b7ae98d726ec577815d14fd680e7c587e89ecc5153b4a145dc4adba33"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562449"
 
 [tools.pi."platforms.macos-x64"]
-checksum = "sha256:f997a088613514ac97d913aeea7642094d84fe6d46854ff7e64e2c12e536dc50"
+checksum = "sha256:5b69cd87c3b00e74cce2d1499df3b7a1ec73632f11abf64696d110f0f4dc4192"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-darwin-x64.tar.gz"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292539"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-darwin-x64.tar.gz"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562451"
 
 [tools.pi."platforms.windows-x64"]
-checksum = "sha256:e6adb8cb8c84eca14391ad24b363de9d2be98a89ca3ba3fdee1fa4de32b7f2e8"
+checksum = "sha256:f5defb6c403ee698f5b3f8886db473e55b78aac670a8ce03620a47f5f0aec57c"
 checksum_source = "mise-versions"
-url = "https://github.com/earendil-works/pi/releases/download/v1.5.2/pi-windows-x64.zip"
-url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/731292654"
+url = "https://github.com/earendil-works/pi/releases/download/v1.6.0/pi-windows-x64.zip"
+url_api = "https://api.github.com/repos/earendil-works/pi/releases/assets/771562502"
 
 [[tools."pipx:mypy"]]
 version = "2.4.1"
 backend = "pipx:mypy"
-specifiers = ["latest"]
+specifiers = ["2.4.1"]
 uv = { path = "locks/pipx-mypy/2.4.1", digest = "sha256:7929dc7f2b55a94edd079a3c4e1f97f464a7fbeefb43161b8a705da174257120" }
 
 [[tools.python]]
 version = "3.15.2"
 backend = "core:python"
-specifiers = ["latest"]
+specifiers = ["3.15.2"]
 
 [tools.python."platforms.linux-arm64"]
 checksum = "sha256:d1367a6c3cd86a9e35712072841f1376859f3b47a2a54e224421a0f9fd169047"
@@ -1162,7 +1161,7 @@ provenance = "github-attestations"
 [[tools.ripgrep]]
 version = "15.2.0"
 backend = "aqua:BurntSushi/ripgrep"
-specifiers = ["latest"]
+specifiers = ["15.2.0"]
 
 [tools.ripgrep."platforms.linux-arm64"]
 checksum = "sha256:a740b91c82eaf9914cfedd353572f2791cbe0162c84101ee0951058f4dcbc90d"
@@ -1209,7 +1208,7 @@ url_api = "https://api.github.com/repos/BurntSushi/ripgrep/releases/assets/47811
 [[tools.ruff]]
 version = "0.17.5"
 backend = "aqua:astral-sh/ruff"
-specifiers = ["latest"]
+specifiers = ["0.17.5"]
 
 [tools.ruff."platforms.linux-arm64"]
 checksum = "sha256:4d959d4322a8cd3effe11e9fc6743da1dbb41cd0b2476e433b6e6bfd9a69b626"
@@ -1256,12 +1255,12 @@ provenance = "github-attestations"
 [[tools.rust]]
 version = "1.100.0"
 backend = "core:rust"
-specifiers = ["latest"]
+specifiers = ["1.100.0"]
 
 [[tools.starship]]
 version = "1.27.0"
 backend = "aqua:starship/starship"
-specifiers = ["latest"]
+specifiers = ["1.27.0"]
 
 [tools.starship."platforms.linux-arm64"]
 checksum = "sha256:341f5cbf24699fa0b27ec88965ad25f862ea09e15d35a543fd6ffdff1d2aa00d"
@@ -1289,7 +1288,6 @@ url_api = "https://api.github.com/repos/starship/starship/releases/assets/650074
 
 [tools.starship."platforms.macos-arm64"]
 checksum = "sha256:5362da8cb2928f98f3ce0ffda697cf0f8de70081db000dae316d6d3a404f6cf0"
-checksum_source = "mise-versions"
 url = "https://github.com/starship/starship/releases/download/v1.27.0/starship-aarch64-apple-darwin.tar.gz"
 url_api = "https://api.github.com/repos/starship/starship/releases/assets/650074353"
 
@@ -1308,7 +1306,7 @@ url_api = "https://api.github.com/repos/starship/starship/releases/assets/650074
 [[tools.terraform]]
 version = "1.17.2"
 backend = "aqua:hashicorp/terraform"
-specifiers = ["latest"]
+specifiers = ["1.17.2"]
 
 [tools.terraform."platforms.linux-arm64"]
 checksum = "sha256:858e08c181a76b6b223e8c767a8e983922eebe2d062db949a2de66ce040c368c"
@@ -1341,7 +1339,7 @@ url = "https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_windows_
 [[tools.terraform-docs]]
 version = "0.25.1"
 backend = "aqua:terraform-docs/terraform-docs"
-specifiers = ["latest"]
+specifiers = ["0.25.1"]
 
 [tools.terraform-docs."platforms.linux-arm64"]
 checksum = "sha256:a5b4b1ae887138fe1c617fe4e1aea272511d9a7ffc2cf98b0a2aacd87b348b56"
@@ -1388,7 +1386,7 @@ url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/a
 [[tools.terraform-ls]]
 version = "0.39.1"
 backend = "aqua:hashicorp/terraform-ls"
-specifiers = ["latest"]
+specifiers = ["0.39.1"]
 
 [tools.terraform-ls."platforms.linux-arm64"]
 checksum = "sha256:a72a6d9f72580cfc30cc06d3c973fd5f55790f62e3ddb195998435070d9af36d"
@@ -1421,7 +1419,7 @@ url = "https://releases.hashicorp.com/terraform-ls/0.39.1/terraform-ls_0.39.1_wi
 [[tools.terragrunt]]
 version = "1.2.2"
 backend = "aqua:gruntwork-io/terragrunt"
-specifiers = ["latest"]
+specifiers = ["1.2.2"]
 
 [tools.terragrunt."platforms.linux-arm64"]
 checksum = "sha256:5581e4ccf9a9bd51f58fe2e4b08f1628302d1bacd3e8ab01e4a597ac4e869aef"
@@ -1468,7 +1466,7 @@ url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/
 [[tools.tflint]]
 version = "0.66.0"
 backend = "aqua:terraform-linters/tflint"
-specifiers = ["latest"]
+specifiers = ["0.66.0"]
 
 [tools.tflint."platforms.linux-arm64"]
 checksum = "sha256:1105a0a5ddee7cdac7957a3475571a946b839192ea1bc0c722c6c4686001067e"
@@ -1515,7 +1513,7 @@ provenance = "github-attestations"
 [[tools.tlrc]]
 version = "1.13.1"
 backend = "aqua:tldr-pages/tlrc"
-specifiers = ["latest"]
+specifiers = ["1.13.1"]
 
 [tools.tlrc."platforms.linux-x64"]
 checksum = "sha256:a0d7d963f2bced8a4fa7ab1a42f24140abdb40ba6033f0996dea2e826e341819"
@@ -1550,7 +1548,7 @@ provenance = "github-attestations"
 [[tools.tree-sitter]]
 version = "0.27.2"
 backend = "aqua:tree-sitter/tree-sitter"
-specifiers = ["latest"]
+specifiers = ["0.27.2"]
 
 [tools.tree-sitter."platforms.linux-arm64"]
 checksum = "sha256:34fcc5c4fa7bdd2058a2a45a03b6eb9a49b03a93b6d52ec750f99b1516d98d33"
@@ -1597,7 +1595,7 @@ provenance = "github-attestations"
 [[tools.uv]]
 version = "0.13.8"
 backend = "aqua:astral-sh/uv"
-specifiers = ["latest"]
+specifiers = ["0.13.8"]
 
 [tools.uv."platforms.linux-arm64"]
 checksum = "sha256:74f2f5c6024d397481db228db8fc25eed420db192243f88438c118e7e013e585"
@@ -1644,7 +1642,7 @@ provenance = "github-attestations"
 [[tools.worktrunk]]
 version = "0.82.0"
 backend = "packslip:github.com/max-sixty/worktrunk"
-specifiers = ["latest"]
+specifiers = ["0.82.0"]
 
 [tools.worktrunk."platforms.linux-arm64"]
 checksum = "sha256:b907f891bc051dcfc13fa479194e156b356f434a37103522ea1fe1b7ded899b5"
