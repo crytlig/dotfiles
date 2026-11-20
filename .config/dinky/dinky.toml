@@ -17,6 +17,8 @@ gaps.outer.bottom = 5
 gaps.outer.left = 5
 gaps.outer.right = 5
 
+[animations]
+enabled = false
 
 # Reserve the top of the screen for sketchybar so tiled windows don't cover it.
 # outer.top should match sketchybar's height (bar height + padding).
