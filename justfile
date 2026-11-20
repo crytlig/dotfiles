@@ -24,3 +24,8 @@ macos:
 brew:
     brew bundle --file=./brewfile
     brew services restart sketchybar
+
+# Clean brew packages
+brew-clean:
+    brew cleanup --prune=all
+
