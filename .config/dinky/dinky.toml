@@ -8,6 +8,9 @@ fullscreen-width = 1.0          # share of the width a fullscreen window, or a w
  
 lone-window-width = 0.75      # lone windows only; omitted uses the resolved fullscreen-width
 
+[display.'HDMI3']
+gaps.outer.top = 45
+
 [display.'LG HDR 5K']
 gaps.outer.top = 45
 
