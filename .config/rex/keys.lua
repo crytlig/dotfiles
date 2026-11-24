@@ -115,3 +115,6 @@ done
   end,
 }
 rex.bind("shift+cmd+n", "session_new_named")
+
+-- Option+Backspace deletes the previous word (sends ESC DEL, i.e. meta-backspace)
+rex.bind("alt+backspace", "com.superlogical.terminal.write", { data = "\27\127" })
