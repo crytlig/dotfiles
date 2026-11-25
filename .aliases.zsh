@@ -2,14 +2,14 @@
 
 ## Terraform
 alias tf='terraform'
-alias tfi='terraform init'
-alias tfp='terraform plan'
-alias tfip='terraform init && terraform plan'
 alias tfa='terraform apply'
 alias tfaa='terraform apply -auto-approve'
+alias tfc='terraform console'
 alias tfd='terraform destroy'
 alias tfda='terraform destroy -auto-approve'
-alias tfc='terraform console'
+alias tfi='terraform init'
+alias tfip='terraform init && terraform plan'
+alias tfp='terraform plan'
 
 # git
 alias g='git'
@@ -23,6 +23,7 @@ alias gd='git diff'
 alias gfa='git fetch --all --tags --prune'
 alias gl='git pull'
 alias gp='git push'
+alias gpf='git push --force-with-lease'
 alias gpr='git pull --rebase'
 alias gpu='git push upstream'
 alias gsb='git status --short --branch'
@@ -34,8 +35,10 @@ alias gst='git status'
 alias ghs='gh auth switch'
 
 # worktrunk
-alias wts='wt switch -c'
+alias wtl='wt list'
 alias wtm='wt switch main'
+alias wtr='wt remove'
+alias wts='wt switch'
 
 myip() {
   local ip=$(curl -s icanhazip.com)
